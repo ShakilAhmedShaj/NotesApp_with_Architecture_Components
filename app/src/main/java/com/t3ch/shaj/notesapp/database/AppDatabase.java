@@ -3,6 +3,7 @@ package com.t3ch.shaj.notesapp.database;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
+import android.arch.persistence.room.TypeConverters;
 import android.content.Context;
 
 
@@ -11,6 +12,7 @@ import android.content.Context;
  * shakilahmedshaj@gmail.com
  */
 @Database(entities = {NoteEntity.class,},version = 1)
+@TypeConverters(DateConverter.class)
 public abstract class AppDatabase extends RoomDatabase {
 
     public static final String DATABASE_NAME = "AppDatabase.db";
