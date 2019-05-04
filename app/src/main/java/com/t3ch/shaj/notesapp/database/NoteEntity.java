@@ -1,4 +1,8 @@
-package com.t3ch.shaj.notesapp.model;
+package com.t3ch.shaj.notesapp.database;
+
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.Ignore;
+import android.arch.persistence.room.PrimaryKey;
 
 import java.util.Date;
 
@@ -6,12 +10,14 @@ import java.util.Date;
  * Created by Shakil Ahmed Shaj on 04-May-19.
  * shakilahmedshaj@gmail.com
  */
-
+@Entity(tableName = "notes")
 public class NoteEntity {
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private Date date;
     private String text;
 
+    @Ignore
     public NoteEntity() {
     }
 
@@ -21,6 +27,7 @@ public class NoteEntity {
         this.text = text;
     }
 
+    @Ignore
     public NoteEntity(Date date, String text) {
         this.date = date;
         this.text = text;

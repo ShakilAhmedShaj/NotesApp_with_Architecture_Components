@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.t3ch.shaj.notesapp.R;
-import com.t3ch.shaj.notesapp.model.NoteEntity;
+import com.t3ch.shaj.notesapp.database.NoteEntity;
 
 import java.util.List;
 

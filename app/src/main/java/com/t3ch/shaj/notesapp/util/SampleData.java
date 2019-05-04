@@ -1,6 +1,6 @@
 package com.t3ch.shaj.notesapp.util;
 
-import com.t3ch.shaj.notesapp.model.NoteEntity;
+import com.t3ch.shaj.notesapp.database.NoteEntity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
