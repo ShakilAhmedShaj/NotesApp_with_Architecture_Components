@@ -6,6 +6,7 @@ import java.util.Date;
  * Created by Shakil Ahmed Shaj on 04-May-19.
  * shakilahmedshaj@gmail.com
  */
+
 public class NoteEntity {
     private int id;
     private Date date;
