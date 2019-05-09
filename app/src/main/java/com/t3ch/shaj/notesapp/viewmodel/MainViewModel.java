@@ -2,6 +2,7 @@ package com.t3ch.shaj.notesapp.viewmodel;
 
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
+import android.arch.lifecycle.LiveData;
 import android.support.annotation.NonNull;
 
 import com.t3ch.shaj.notesapp.database.AppRepository;
@@ -17,7 +18,8 @@ import java.util.List;
  */
 public class MainViewModel extends AndroidViewModel {
 
-    public List<NoteEntity> mNotes;
+//    public List<NoteEntity> mNotes;
+    public LiveData<List<NoteEntity>>  mNotes;
     private AppRepository mRepository;
 
 
@@ -25,7 +27,7 @@ public class MainViewModel extends AndroidViewModel {
         super(application);
 
         mRepository = AppRepository.getInstance(application.getApplicationContext());
-        mNotes = SampleData.getNotes();
+        mNotes = mRepository.mNotes;
 
 
     }
