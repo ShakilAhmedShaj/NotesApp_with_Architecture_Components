@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">NotesApp</string>
-    <string name="action_add_sample_data">Add Sample Data</string>
+    <string name="app_name">Plain Ol\' Notes 3</string>
+    <string name="action_add_sample_data">Add sample data</string>
     <string name="title_activity_editor">EditorActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -91,5 +91,9 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <string name="EnterNote">Enter Note</string>
+    <string name="enter_note">Enter note</string>
+    <string name="delete_all">Delete all notes</string>
+    <string name="new_note">New note</string>
+    <string name="edit_note">Edit note</string>
+    <string name="delete">Delete</string>
 </resources>

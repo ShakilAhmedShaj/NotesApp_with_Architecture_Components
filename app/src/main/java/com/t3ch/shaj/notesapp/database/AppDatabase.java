@@ -11,17 +11,14 @@ import android.content.Context;
  * Created by Shakil Ahmed Shaj on 05-May-19.
  * shakilahmedshaj@gmail.com
  */
-@Database(entities = {NoteEntity.class,},version = 1)
+@Database(entities = {NoteEntity.class}, version = 1)
 @TypeConverters(DateConverter.class)
 public abstract class AppDatabase extends RoomDatabase {
-
     public static final String DATABASE_NAME = "AppDatabase.db";
-
     private static volatile AppDatabase instance;
     private static final Object LOCK = new Object();
 
     public abstract NoteDao noteDao();
-
 
     public static AppDatabase getInstance(Context context) {
         if (instance == null) {

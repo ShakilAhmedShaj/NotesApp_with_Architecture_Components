@@ -35,6 +35,4 @@
 
     <include layout="@layout/content_editor" />
 
-
-
 </android.support.design.widget.CoordinatorLayout>

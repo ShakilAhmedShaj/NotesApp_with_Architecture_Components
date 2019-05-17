@@ -1,13 +1,16 @@
 package com.t3ch.shaj.notesapp.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.t3ch.shaj.notesapp.EditorActivity;
 import com.t3ch.shaj.notesapp.R;
 import com.t3ch.shaj.notesapp.database.NoteEntity;
 
@@ -15,6 +18,8 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.t3ch.shaj.notesapp.util.Constants.NOTE_ID_KEY;
 
 
 /**
@@ -33,7 +38,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.note_list_item, parent, false);
         return new ViewHolder(view);
@@ -44,6 +49,14 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
         final NoteEntity note = mNotes.get(position);
         holder.mTextView.setText(note.getText());
 
+        holder.mFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, EditorActivity.class);
+                intent.putExtra(NOTE_ID_KEY, note.getId());
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -52,11 +65,12 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.ViewHolder> 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         @BindView(R.id.note_text)
         TextView mTextView;
+        @BindView(R.id.fab)
+        FloatingActionButton mFab;
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }
